@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ลงชื่อผู้ใช้</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>ชื่อผู้ใช้</ion-label>
+    <ion-input type="text" [(ngModel)]="logindata.username"></ion-input>
+  </ion-item><ion-item>
+    <ion-label floating>รหัสผ่าน</ion-label>
+    <ion-input type="text" [(ngModel)]="logindata.password"></ion-input>
+  </ion-item>
+
+  <button ion-button block round (click)="Login()">เข้าสู่ระบบ</button>
+  <button ion-button block round (click)="register()">สร้างบัญชีผู้ใช้</button>
+
+</ion-content>

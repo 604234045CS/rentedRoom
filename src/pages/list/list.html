@@ -1,23 +1,45 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>ประเภทห้องเช่า</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+    
+  <ion-item (click)="nextCon()">
+    <ion-thumbnail item-left>
+        <img src="assets/imgs/condo.PNG">
+      </ion-thumbnail>
+  <h2>คอนโดมีเนียม</h2>
+  <ion-icon item-right name="arrow-dropright-circle"></ion-icon>
+</ion-item>
+
+<ion-item (click)="nextApart()">
+  <ion-thumbnail item-left>
+      <img src="assets/imgs/apartment.PNG">
+    </ion-thumbnail>
+<h2>อพาร์ทเมนต์</h2>
+<ion-icon item-right name="arrow-dropright-circle"></ion-icon>
+</ion-item>
+
+<ion-item (click)="nextMan()">
+  <ion-thumbnail item-left>
+      <img src="assets/imgs/manshion.PNG">
+    </ion-thumbnail>
+<h2>แมนชั่น</h2>
+<ion-icon item-right name="arrow-dropright-circle"></ion-icon>
+</ion-item>
+
+<ion-item (click)="nextDorm()">
+  <ion-thumbnail item-left>
+      <img src="assets/imgs/room.PNG">
+    </ion-thumbnail>
+<h2>หอพัก</h2>
+<ion-icon item-right name="arrow-dropright-circle"></ion-icon>
+</ion-item>
+
+
 </ion-content>

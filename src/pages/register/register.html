@@ -1,0 +1,40 @@
+
+<ion-header>
+  <ion-navbar color="secondary"> 
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>สร้างบัญชีผู้ใช้</ion-title>
+    </ion-navbar>
+</ion-header>
+
+  
+
+<ion-content padding>
+  
+  <ion-item>
+    <ion-label floating>ชื่อ</ion-label>
+    <ion-input type="" [(ngModel)]="sigupdata.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>นามสกุล</ion-label>
+    <ion-input type="" [(ngModel)]="sigupdata.surname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>อีเมล</ion-label>
+    <ion-input type="" [(ngModel)]="sigupdata.email"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>ชื่อผู้ใช้</ion-label>
+      <ion-input type="" [(ngModel)]="sigupdata.username"></ion-input>
+    </ion-item>
+    
+  <ion-item>
+    <ion-label floating>รหัสผ่าน</ion-label>
+    <ion-input type="" [(ngModel)]="sigupdata.password"></ion-input>
+  </ion-item>
+  
+  <button ion-button block round (click)="regis()">ลงทะเบียน</button>
+  <button ion-button block round >เข้าสู่ระบบ</button>
+  <button ion-button block round >ยกเลิก</button>
+</ion-content>

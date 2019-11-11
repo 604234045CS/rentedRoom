@@ -1,37 +1,42 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
 
+import { ApikeyProvider } from './../../providers/apikey/apikey';
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
+
+
+
+
+@IonicPage()
 @Component({
   selector: 'page-list',
-  templateUrl: 'list.html'
+  templateUrl: 'list.html',
 })
 export class ListPage {
-  selectedItem: any;
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+  data_rented : string;
+  room:any=[];
 
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private keyAPI : ApikeyProvider,private http : HttpClient) {
+   
   }
 
-  itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ListPage, {
-      item: item
-    });
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ListPage');
   }
+
+nextCon(){
+this.navCtrl.push("CondoPage");
+}
+nextApart(){
+  this.navCtrl.push("ApartPage");
+}
+nextMan(){
+  this.navCtrl.push("ManPage");
+}
+nextDorm(){
+  this.navCtrl.push("DormPage");
+}
+
+
 }

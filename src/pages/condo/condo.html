@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>ข้อมูลหอพัก</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-searchbar (ionInput)="onSearch($event)"></ion-searchbar>
+    
+    <ion-card *ngFor="let item of room">
+        <ion-item >
+            <ion-thumbnail item-left>
+              <img src="assets/imgs/{{item.pic_ti}}">
+            </ion-thumbnail>
+            <h2>ชื่อ:{{item.dorm_name}}</h2>
+            <p>ที่อยู่่ : {{item.address}} </p>
+            <p>สิ่งอำนวยความสะดวก:{{item.facilities}}</p>
+            <button ion-button color="primary" (click)="viewDetail(item)">รายละเอียด</button>
+          </ion-item>
+    </ion-card>
+
+    <ion-fab right >
+      <button ion-fab mini color="secondary"><ion-icon name="add-circle"></ion-icon></button>
+      <ion-fab-list side="left">
+        <button ion-fab color="secondary" (click)="select()"><ion-icon name="logo-bitcoin">    
+        </ion-icon>
+      </button>
+      </ion-fab-list> 
+    </ion-fab>
+</ion-content>

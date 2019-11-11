@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>เปรียบเทียบราคาห้องเช่า</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-item >
+  <ion-label color="secondary">เลือกห้องเช่า</ion-label>
+  <ion-select [(ngModel)]="result.room1">
+    <ion-option *ngFor="let get of room">{{get.dorm_name}}</ion-option>
+  </ion-select>
+</ion-item>
+
+<ion-note>กับ</ion-note>
+
+<ion-item >
+  <ion-label color="secondary">เลือกห้องเช่า</ion-label>
+  <ion-select [(ngModel)]="result.room2">
+    <ion-option *ngFor="let get of room">{{get.dorm_name}}</ion-option>
+  </ion-select>
+</ion-item>
+
+<button ion-button color="secondary" (click)="getvs()">เปรียบเทียบ</button>
+<ion-card>
+  <ion-card-content *ngFor="let item of show1">
+    <ion-item>
+      <p>ชื่อหอพัก : {{item.dorm_name}} </p>
+    </ion-item>
+    <ion-item>
+        <p>ที่อยู่ : {{item.address}}</p>
+      </ion-item>
+      <ion-item>
+          <p>ราคา : {{item.price}}</p>
+        </ion-item>
+        <ion-item>
+            <p>สิ่งอำนวยความสะดวก : {{item.facilities}}</p>
+          </ion-item>
+          <ion-item>
+              <p>เพศผู้เช่า : {{item.sex_c}}</p>
+            </ion-item>
+            <ion-item>
+                <p>เบอร์โทรติดต่อ : {{item.numphone}}</p>
+              </ion-item>
+  </ion-card-content>
+</ion-card>
+<ion-card>
+  <ion-card-content *ngFor="let item of show2">
+    <ion-item>
+      <p>ชื่อหอพัก : {{item.dorm_name}} </p>
+    </ion-item>
+    <ion-item>
+        <p>ที่อยู่ : {{item.address}}</p>
+      </ion-item>
+      <ion-item>
+          <p>ราคา : {{item.price}}</p>
+        </ion-item>
+        <ion-item>
+            <p>สิ่งอำนวยความสะดวก : {{item.facilities}}</p>
+          </ion-item>
+          <ion-item>
+              <p>เพศผู้เช่า : {{item.sex_c}}</p>
+            </ion-item>
+            <ion-item>
+                <p>เบอร์โทรติดต่อ : {{item.numphone}}</p>
+              </ion-item>
+  </ion-card-content>
+</ion-card>
+
+
+</ion-content>
+
+
+

@@ -1,0 +1,66 @@
+
+<ion-header>
+  <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>insertDorm</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<button ion-button block color="secondary">เลือกจากอัลบั้ม</button>
+<ion-item>
+    <ion-label floating>ชื่อหอพัก</ion-label>
+    <ion-input type="text" [(ngModel)]="insertdata.dorm_name"></ion-input>
+</ion-item>
+<ion-item>
+    <ion-label floating>ราคา THB</ion-label>
+    <ion-input type="text" [(ngModel)]="insertdata.price"></ion-input>
+</ion-item>
+
+<ion-item >
+    <ion-label >ประเภทห้องเช่า</ion-label>
+    <ion-select [(ngModel)]="insertdata.catagory">
+      <ion-option >คอนโดมิเนียม</ion-option>
+      <ion-option >อพาร์ทเมนท์</ion-option>
+      <ion-option >แมนชั่น</ion-option>
+      <ion-option >หอพัก</ion-option>
+    </ion-select>
+    
+  </ion-item>
+
+  <ion-item >
+      <ion-label >จำกัดเพศผู้เช่า</ion-label>
+      <ion-select [(ngModel)]="insertdata.sex_c">
+        <ion-option >ไม่จำกัดเพศ</ion-option>
+        <ion-option >หญิง</ion-option>
+        <ion-option >ชาย</ion-option>
+      </ion-select>
+    </ion-item>
+
+<ion-item>
+    <ion-label floating>เบอร์ติดต่อ</ion-label>
+    <ion-input type="" [(ngModel)]="insertdata.numphone"></ion-input>
+</ion-item>
+<ion-item>
+    <ion-label floating>สิ่งอำนวยความสะดวก</ion-label>
+    <ion-input type="" [(ngModel)]="insertdata.facilities"></ion-input>
+</ion-item>
+<ion-item>
+    <ion-label floating>ที่อยู่</ion-label>
+    <ion-input type="" [(ngModel)]="insertdata.address"></ion-input>
+</ion-item>
+
+<!-- <ion-item>
+    <ion-label >*ระบบจะบันทึกตำแหน่ง...ดังนั้นคุณควรที่จะอยู่ที่ห้อง</ion-label>
+</ion-item>
+
+<ion-item>
+    <ion-label >ละติจูต:  &nbsp; &nbsp; &nbsp; &nbsp; ลองติจูต:  &nbsp; &nbsp; &nbsp; &nbsp;
+      <button ion-button color="secondary"><ion-icon name="locate"></ion-icon></button>
+    </ion-label>
+</ion-item> -->
+
+<button ion-button round block color="secondary" (click)="insert()">ส่ง</button>
+</ion-content>

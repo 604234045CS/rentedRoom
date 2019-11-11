@@ -1,0 +1,89 @@
+
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>รายละเอียดของห้อง</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card>
+        <ion-slides >
+      <ion-slide >
+            <img src="assets/imgs/{{data_room.picture_name1}}" style="width:300px;height:320px;">     
+      </ion-slide>
+     <ion-slide >
+            <img src="assets/imgs/{{data_room.picture_name2}}" style="width:300px;height:320px;">     
+    </ion-slide>
+    <ion-slide >
+             <img src="assets/imgs/{{data_room.picture_name3}}" style="width:300px;height:320px;">     
+    </ion-slide>
+</ion-slides>
+
+</ion-card>
+
+<ion-list >
+  <ion-item>
+    <p>ชื่อหอพัก : {{data_room.dorm_name}} </p>
+  </ion-item>
+  <ion-item>
+      <p>ที่อยู่ : {{data_room.address}}</p>
+    </ion-item>
+    <ion-item>
+        <p>ราคา : {{data_room.price}}</p>
+      </ion-item>
+      <ion-item>
+          <p>สิ่งอำนวยความสะดวก : {{data_room.facilities}}</p>
+        </ion-item>
+        <ion-item>
+            <p>เพศผู้เช่า : {{data_room.sex_c}}</p>
+          </ion-item>
+          <ion-item>
+              <p>เบอร์โทรติดต่อ : {{data_room.numphone}}</p>
+            </ion-item>
+            <ion-item>
+              <button ion-button block color="secondary" (click)="shareFace()">SHARE ON FACEBOOK</button>
+            </ion-item>
+            <ion-item>
+              <button ion-button block color="secondary">ดูแผนที่</button>
+            </ion-item>
+
+            <ion-grid>
+              <ion-row padding>
+                <ion-col width-10>
+                    <ionic3-star-rating 
+                    activeIcon = "ios-star"
+                    defaultIcon = "ios-star-outline"
+                    activeColor = "#f4e242" 
+                    defaultColor = "#f4e242"
+                    readonly="false"
+                    [rating]="1">
+                  </ionic3-star-rating>
+                  คะแนน :{{score}}
+                </ion-col>
+                <ion-col width-2>
+                    <ion-buttons end>
+                  <button ion-button small (click)="scoreview(data_room.dorm_id)"> ให้คะแนน</button>
+                  </ion-buttons>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <ion-note>ความคิดเห็น</ion-note>
+<br>
+    <ion-item >    
+        <ion-icon name="person"></ion-icon>
+        <ion-label>
+          <ion-icon name="contact"></ion-icon>
+        </ion-label>
+        <ion-input type="" [(ngModel)]="member.text" ></ion-input>
+      </ion-item>
+  <ion-buttons end>
+      <button ion-button small color="secondary" outline (click)="textroom(data_room.dorm_id)">
+       ส่ง
+      </button>
+    </ion-buttons>
+ 
+
+</ion-list>
+</ion-content>
