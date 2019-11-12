@@ -14,6 +14,7 @@ export class DetailPage {
   data_room : any= [];
   score : any ;
   member : any = {};
+  datacom : any ;
   constructor(public navCtrl: NavController, public navParams: NavParams,public  keyAPI:ApikeyProvider,private socialSharing: SocialSharing,public http:Http,public event : Events) {
     
     this.event.subscribe('star-rating:changed',(note)=> {
@@ -28,6 +29,10 @@ export class DetailPage {
     console.log('ionViewDidLoad DetailPage');
     this.data_room = this.navParams.data;
     console.log(this.data_room);
+
+    this.keyAPI.show_com(this.data_room).subscribe(data=>{
+        this.datacom = data;
+    });
   }
 
   
@@ -41,12 +46,14 @@ export class DetailPage {
     this.socialSharing.shareViaFacebook('หอพัก :'+name +':'+address +':'+catagory_name +':'+price +':'+facilities +':'+sex_c +':');
   }
 
-  scoreview(roomid){
+  scoreview(dorm_id){
     if(this.score != ''){
-      let url = 'http://localhost/ranted/upscore.php';
+      console.log(this.score);
+      console.log(dorm_id);
+      let url = 'http://10.8.8.198/ranted/upscore.php';
       let datapost = JSON.stringify({
         score : this.score,
-        idroom :roomid
+        dorm_id :dorm_id
       });
       this.http.post(url,datapost).subscribe(data=>{
         console.log(data);
@@ -60,10 +67,10 @@ export class DetailPage {
   textroom(dorm_id){
     console.log(this.member.text);
     if(this.member.text != ""){
-      let url = 'http://localhost/ranted/review.php';
+      let url = 'http://10.8.8.198/ranted/review.php';
       let datapost = JSON.stringify({
         text : this.member.text,
-        idroom : dorm_id
+        dorm_id : dorm_id
       });
       this.http.post(url,datapost).subscribe(data=>{
         console.log(data);

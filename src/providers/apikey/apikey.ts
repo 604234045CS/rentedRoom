@@ -40,31 +40,36 @@ export class ApikeyProvider {
   
 
   data_sea(query){
-   let url = 'http://localhost/todoslim3/public/search/'+ query;
+   let url = 'http://10.8.8.198/todoslim3/public/search/'+ query;
    return this.http.get(url);
   }
 
   lod3(){
-    let url = 'http://localhost/todoslim3/public/ren3';
+    let url = 'http://10.8.8.198/todoslim3/public/ren3';
     return this.http.get(url);
   }
 
   lod34(){
-    let url = 'http://localhost/todoslim3/public/ren34';
+    let url = 'http://10.8.8.198/todoslim3/public/ren34';
     return this.http.get(url);
   }
   lod45(){
-    let url = 'http://localhost/todoslim3/public/ren45';
+    let url = 'http://10.8.8.198/todoslim3/public/ren45';
     return this.http.get(url);
   }
   lod5(){
-    let url = 'http://localhost/todoslim3/public/ren5';
+    let url = 'http://10.8.8.198/todoslim3/public/ren5';
     return this.http.get(url);
   }
 
   showroom(dorm_name){
-    let url = 'http://localhost/todoslim3/public/room/' + dorm_name;
+    let url = 'http://10.8.8.198/todoslim3/public/room/' + dorm_name;
     return this.http.get(url);
   }
 
+  show_com(dorm_id){
+    let url = 'http://10.8.8.198/todoslim3/public/review/' + dorm_id;
+    return this.http.get(url);
+
+  }
 }

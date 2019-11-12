@@ -39,7 +39,7 @@ export class InsertDormPage {
       console.log("catagory:",this.insertdata.catagory);
       console.log("facilities:",this.insertdata.facilities);
 
-      let url:string = "http://localhost/ranted/addroom.php";
+      let url = 'http://10.8.8.198/ranted/addroom.php';
       let dataPost = JSON.stringify({
         dorm_name: this.insertdata.dorm_name,
         address: this.insertdata.address,

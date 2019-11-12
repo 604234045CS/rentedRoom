@@ -31,7 +31,7 @@ export class RegisterPage {
       console.log("username:",this.sigupdata.username);
       console.log("password:",this.sigupdata.password);
      
-      let url:string = "http://localhost/ranted/register.php";
+      let url:string = "http://10.8.8.198/ranted/register.php";
       let dataPost = JSON.stringify({
         name:this.sigupdata.name,
         surname:this.sigupdata.surname,
@@ -47,5 +47,14 @@ export class RegisterPage {
       alert('ยืนยันการสมัคร');
       
     }
+}
+
+
+Login(){
+  this.navCtrl.pop();
+}
+
+back(){
+  this.navCtrl.setRoot("RegisterPage");
 }
 }

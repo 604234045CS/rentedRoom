@@ -36,7 +36,7 @@ export class LoginPage {
       console.log("username:",this.logindata.username);
     console.log("password:",this.logindata.password);
 
-    let url:string = "http://localhost/ranted/login.php";
+    let url:string = "http://10.8.8.198/ranted/login.php";
     let dataPost = JSON.stringify({
       username:this.logindata.username,
       password:this.logindata.password
