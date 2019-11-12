@@ -12,28 +12,28 @@ export class ApikeyProvider {
   }
 
   data_dorm(){
-    let url = 'http://localhost/todoslim3/public/ranted';
+    let url = 'http://10.8.8.198/todoslim3/public/ranted';
     return this.http.get(url);
 
   }
 
   data_apart(){
-    let url = 'http://localhost/todoslim3/public/apart';
+    let url = 'http://10.8.8.198/todoslim3/public/apart';
     return this.http.get(url);
   }
 
   data_condo(){
-    let url = 'http://localhost/todoslim3/public/condo';
+    let url = 'http://10.8.8.198/todoslim3/public/condo';
     return this.http.get(url);
   }
 
   data_manshion(){
-    let url = 'http://localhost/todoslim3/public/manshion';
+    let url = 'http://10.8.8.198/todoslim3/public/manshion';
     return this.http.get(url);
   }
 
   data_do(){
-    let url = 'http://localhost/todoslim3/public/do';
+    let url = 'http://10.8.8.198/todoslim3/public/do';
     return this.http.get(url);
   }
 
